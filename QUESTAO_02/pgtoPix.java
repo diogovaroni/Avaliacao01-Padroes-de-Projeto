@@ -1,11 +1,25 @@
 package QUESTAO_02;
 
-// Implementação concreta para pagamento via PIX.
-// Segue o contrato definido pela interface MeioPagamento.
+// Implementação do pagamento via PIX.
+// Valida a chave e realiza o pagamento.
 public class pgtoPix implements iMeioPagamento {
+    private String chavePix;
+
+    public pgtoPix(String chavePix) {
+        try {
+            if (chavePix.equals("pix@empresa.com")) {
+                this.chavePix = chavePix;
+            } else {
+                throw new Exception("Chave Pix inválida.");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
     @Override
-    public void processarPagamento(double valor) {
-        System.out.println("Processando pagamento de R$" + valor + " no Pix.");
+    public void pagar(double valor) {
+        System.out.println("PIX " + chavePix + ", pagamento efetuado. valor: R$ " + valor);
     }
 
 }
