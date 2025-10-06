@@ -4,6 +4,7 @@ package QUESTAO_02;
 // Demonstra a criação dinâmica dos meios de pagamento via fábricas.
 public class sistemaDePagamento {
     public static void main(String[] args) {
+        
         servicoPgto service = new servicoPgto();
 
         // Pagamento via Cartão de Crédito
