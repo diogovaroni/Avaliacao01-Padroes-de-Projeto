@@ -8,7 +8,7 @@ public class sistemaDePagamento {
         servicoPgto service = new servicoPgto();
 
         // Pagamento via Cartão de Crédito
-        service.pagar(new fabricaCredito("12345"), 1000.00);
+        service.pagar(new fabricaCredito("123456"), 1000.00);
 
         // Pagamento via Pix
         service.pagar(new fabricaPix("pix@empresa.com"), 500.00);        
