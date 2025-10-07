@@ -11,10 +11,10 @@ public class sistemaDePagamento {
         service.pagar(new fabricaCredito("123456"), 1000.00);
 
         // Pagamento via Pix
-        service.pagar(new fabricaPix("pix@empresa.com"), 500.00);        
+        service.pagar(new fabricaPix("1112"), 500.00);        
         
         // Pagamento via Boleto
-        service.pagar(new fabricaBoleto("12345678900"), 750.00);
+        service.pagar(new fabricaBoleto("1234567890"), 750.00);
 
     }
 }

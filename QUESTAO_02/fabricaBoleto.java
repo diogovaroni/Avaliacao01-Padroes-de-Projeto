@@ -9,7 +9,12 @@ public class fabricaBoleto extends absFabricaPgto {
 
     @Override
     public iMeioPagamento criar() {
-        return new pgtoBoleto(this.cpf);
+        try {
+            return new pgtoBoleto(this.cpf);
+        } catch (Exception e) {
+            System.out.println("Erro ao criar pagamento por Boleto: " + e.getMessage());
+            return null;
+        }
     }
 
 }

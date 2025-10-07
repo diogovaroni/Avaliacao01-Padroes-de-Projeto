@@ -4,16 +4,11 @@ package QUESTAO_02;
 // Valida o CPF e realiza o pagamento.
 public class pgtoBoleto implements iMeioPagamento {
     private String cpf;
-    public pgtoBoleto(String cpf) {
-        try {
-            if (cpf.equals("12345678900")) {
-                this.cpf = cpf;
-            } else {
-                throw new Exception("CPF inválido.");
-            }
-        }   catch (Exception e) {
-            System.out.println(e);
+    public pgtoBoleto(String cpf) throws Exception {
+        if (!cpf.equals("12345678900")) {
+            throw new Exception("CPF inválido.");
         }
+        this.cpf = cpf;
     }
 
     @Override

@@ -5,17 +5,13 @@ package QUESTAO_02;
 public class pgtoPix implements iMeioPagamento {
     private String chavePix;
 
-    public pgtoPix(String chavePix) {
-        try {
-            if (chavePix.equals("pix@empresa.com")) {
-                this.chavePix = chavePix;
-            } else {
-                throw new Exception("Chave Pix inválida.");
-            }
-        } catch (Exception e) {
-            System.out.println(e);
+    public pgtoPix(String chavePix) throws Exception {
+        if (!chavePix.equals("11122")) {
+            throw new Exception("Chave Pix inválida.");
         }
+        this.chavePix = chavePix;              
     }
+    
     
     @Override
     public void pagar(double valor) {

@@ -11,6 +11,11 @@ public class fabricaCredito extends absFabricaPgto {
 
     @Override
     public iMeioPagamento criar() {
-        return new pgtoCredito(this.numeroCartao);        
+        try {
+            return new pgtoCredito(this.numeroCartao);  
+        } catch (Exception e) {
+            System.out.println("Erro ao criar pagamento por cartão de crédito: " + e.getMessage());
+            return null;
+        }              
     }
 }

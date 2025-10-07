@@ -12,6 +12,11 @@ public class fabricaPix extends absFabricaPgto {
 
     @Override
     public iMeioPagamento criar() {
-        return new pgtoPix(this.chavePix);     
+        try {
+            return new pgtoPix(this.chavePix);
+        } catch (Exception e) {
+            System.out.println("Erro ao criar pagamento por PIX: " + e.getMessage());
+            return null;
+        }
     }
 }

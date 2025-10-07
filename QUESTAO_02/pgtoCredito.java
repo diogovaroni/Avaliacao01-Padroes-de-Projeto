@@ -5,16 +5,11 @@ package QUESTAO_02;
 public class pgtoCredito implements iMeioPagamento {
     private String numeroCartao;
 
-    public pgtoCredito(String numeroCartao) {
-        try {
-            if (numeroCartao.equals("123456")) {
-                this.numeroCartao = numeroCartao;
-            } else {
-                throw new Exception("Número de cartão inválido.");
-            }
-        }   catch (Exception e) {
-            System.out.println(e);
-        }
+    public pgtoCredito(String numeroCartao) throws Exception {        
+        if (!numeroCartao.equals("123456")) {
+            throw new Exception("Número de cartão inválido.");
+        }        
+        this.numeroCartao = numeroCartao;    
     }
 
     @Override
